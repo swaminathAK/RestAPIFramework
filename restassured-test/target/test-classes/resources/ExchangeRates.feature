@@ -11,34 +11,30 @@ Then User should get success message for result status
 
 @tc_02 @positive
 Scenario: Verify various fields of correct response on valid input
-Given Rest API for "Latest" Foreign Exchange rates
-When The API is called for "valid input" using get method
+Given Rest API for "latest" Foreign Exchange rates
+When The API is called for "valid_input" using get method
 Then User should get proper details for latest exchange rates
 
 @tc_03 @negative
 Scenario: Verify various fields of response on INvalid input 
-Given Rest API for "Latest" Foreign Exchange rates
-When The API is called for "invalid input" using get method
+Given Rest API for "latest" Foreign Exchange rates
+When The API is called for "invalid_input" using get method
 Then User should get error message for result status
 
 @tc_04 @positive @smoke
-Scenario: Verify exchange rates availability for specific date
-Given Rest API for "Specific date" Foreign Exchange rates
-When The API is called for "specific date" using get method
+Scenario: Verify exchange rates availability for Specific_date
+Given Rest API for "specific_date" Foreign Exchange rates
+When The API is called for "specific_date" using get method
 Then User should get success message for result status 
 
 @tc_05 @positive
-Scenario: Verify exchange rates details for specific date
-Given Rest API for "Specific date" Foreign Exchange rates
-When The API is called for "specific date" using get method
-Then User should get proper details for specific date exchange rates
+Scenario: Verify exchange rates details for Specific_date
+Given Rest API for "Specific_date" Foreign Exchange rates
+When The API is called for "specific_date" using get method
+Then User should get proper details for Specific date exchange rates
 
 @tc_06 @positive
 Scenario: Verify exchange rates for future date
-Given Rest API for "Specific date" Foreign Exchange rates
-When The API is called for "future date" using get method
+Given Rest API for "specific_date" Foreign Exchange rates
+When The API is called for "future_date" using get method
 Then User should get proper details for current date exchange rates
-
-
-
-
