@@ -20,7 +20,7 @@ public class Steps {
 	private static final String PASSWORD = "Tushar2765";
 	private static final String BASE_URL = "https://v6.exchangerate-api.com/v6/";
 
-	private static String token;
+//	private static String token;
 	private static Response response;
 	private static String jsonString;
 //https://app.exchangerate-api.com/dashboard
@@ -39,12 +39,52 @@ public class Steps {
 	@When("I perform get operation using above request")
 	public void i_perform_get_operation_using_above_request() {
 		RequestSpecification request = RestAssured.given();
-		response = request.get("/BookStore/v1/Books");
+		response = request.get("/latest/USD");
 	}
 
 	@Then("I should get proper response for given input")
 	public void i_should_get_proper_response_for_given_input() {
-		Assert.assertEquals(201, response.getStatusCode());
+		jsonString = response.asString();
+		Assert.assertEquals("success", JsonPath.from(jsonString).get("books"), "request for latest exchange rates is NOT successful");
 	}
+	
+	///////////////////////////////////////////////////////
+
+	@Then("User should get success message for result status")
+	public void user_should_get_success_message_for_result_status() {
+	    
+	}
+
+	@Given("Rest API for {string} Foreign Exchange rates")
+	public void rest_API_for_Foreign_Exchange_rates(String string) {
+	    
+	}
+
+	@When("The API is called for {string} using get method")
+	public void the_API_is_called_for_using_get_method(String string) {
+	    
+	}
+
+	@Then("User should get proper details for latest exchange rates")
+	public void user_should_get_proper_details_for_latest_exchange_rates() {
+	    
+	}
+
+	@Then("User should get error message for result status")
+	public void user_should_get_error_message_for_result_status() {
+	   
+	}
+
+	@Then("User should get proper details for specific date exchange rates")
+	public void user_should_get_proper_details_for_specific_date_exchange_rates() {
+	    
+	}
+
+	@Then("User should get proper details for current date exchange rates")
+	public void user_should_get_proper_details_for_current_date_exchange_rates() {
+	    
+	}
+
+	
 
 }
